@@ -1,0 +1,29 @@
+#!/bin/sh
+
+function run_dotnet() {
+    echo running: $1
+    dotnet $1  > publish.log
+    export result=$?
+    if [ $result != 0 ]; then
+        cat publish.log
+        echo "failed: $1 - returned $result"
+        exit 1
+    fi
+}
+
+if [ -z "$NUGET_LOCAL" ]; then
+    echo "NUGET_LOCAL undefined"
+    exit -1
+fi
+
+clean
+run_dotnet "build --configuration=Release"
+run_dotnet test
+run_dotnet pack
+
+packages=$(find . -name "*.nupkg" 2>/dev/null)
+
+for package in $packages; do
+    echo publishing: $package
+    dotnet nuget push $package --source=$NUGET_LOCAL
+done
