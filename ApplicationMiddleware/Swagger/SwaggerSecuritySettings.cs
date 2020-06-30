@@ -1,6 +1,6 @@
 ﻿using Microsoft.OpenApi.Models;
 
-namespace Middleware.Application.Swagger
+namespace ApplicationMiddleware.Swagger
 {
     public class SwaggerSecuritySettings
     {

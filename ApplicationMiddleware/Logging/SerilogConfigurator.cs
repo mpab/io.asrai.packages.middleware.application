@@ -5,7 +5,7 @@ using Serilog.Events;
 using System.Diagnostics;
 using System.Reflection;
 
-namespace Middleware.Application.Logging
+namespace ApplicationMiddleware.Logging
 {
     public static class SerilogConfigurator
     {

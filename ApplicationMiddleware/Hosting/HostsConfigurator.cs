@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 
-namespace Middleware.Application.Hosting
+namespace ApplicationMiddleware.Hosting
 {
     public static class HostsConfigurator
     {

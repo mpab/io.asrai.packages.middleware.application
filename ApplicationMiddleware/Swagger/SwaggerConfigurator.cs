@@ -5,7 +5,7 @@ using System;
 using System.IO;
 using System.Reflection;
 
-namespace Middleware.Application.Swagger
+namespace ApplicationMiddleware.Swagger
 {
     public static class SwaggerConfigurator
     {

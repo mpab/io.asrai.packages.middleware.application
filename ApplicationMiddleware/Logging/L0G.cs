@@ -1,7 +1,7 @@
 using Serilog;
 using System;
 
-namespace Middleware.Application.Logging
+namespace ApplicationMiddleware.Logging
 {
     public class L0G
     {
